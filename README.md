@@ -9,12 +9,13 @@ Matlab 2016a or above
 ### Datasets
 
 ### Preprocessing
-
 The preprocessing consists of normalisiing the images and the body poses.
 
 #### Images normalisation
+![image](https://user-images.githubusercontent.com/50513215/122835919-2979e780-d2e9-11eb-9c7c-f8cf91218c98.png)
 
 #### Pose normalisation
+![image](https://user-images.githubusercontent.com/50513215/122835975-41ea0200-d2e9-11eb-9356-e86ee3283056.png)
 
 
 ### Model
@@ -24,6 +25,7 @@ The preprocessing consists of normalisiing the images and the body poses.
 #### Qualitative results
 ![image](https://user-images.githubusercontent.com/50513215/122835640-ae183600-d2e8-11eb-8722-edcfd491a1e7.png)
 ![image](https://user-images.githubusercontent.com/50513215/122835791-ef104a80-d2e8-11eb-838b-25589aced41b.png)
+
 #### Quantitative results
 The number of training data, the number of testing data, and the number of iterations required for each of our three ConvNet models to get the minimum loss value
 ![image](https://user-images.githubusercontent.com/50513215/122835150-c3409500-d2e7-11eb-8a2f-80b51d66eaec.png)
