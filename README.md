@@ -22,7 +22,7 @@ The preprocessing consists of normalisiing the images and the body poses.
 
 ### Evaluation results
 #### Qualitative results
-![image](https://user-images.githubusercontent.com/50513215/122834544-abb4dc80-d2e6-11eb-962b-7b624be319b8.png)
+![image](https://user-images.githubusercontent.com/50513215/122835464-495cdb80-d2e8-11eb-8800-ecf85a96117a.png)
 ![image](https://user-images.githubusercontent.com/50513215/122835244-e9fecb80-d2e7-11eb-9b16-dc1194678f73.png)
 #### Quantitative results
 The number of training data, the number of testing data, and the number of iterations required for each of our three ConvNet models to get the minimum loss value
