@@ -27,8 +27,10 @@ The preprocessing consists of normalisiing the images and the body poses.
 
 #### Quantitative results
 The number of training data, the number of testing data, and the number of iterations required for each of our three ConvNet models to get the minimum loss value
+![image](https://user-images.githubusercontent.com/50513215/122835072-a7d58a00-d2e7-11eb-9e32-c03adefc7143.png)
 
 
 ### Demo
 To run the demo like the following animation, open the folder ./demo with matlab and run main.m 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/50513215/122835059-a1471280-d2e7-11eb-964c-6be706b7cd22.gif)
 
