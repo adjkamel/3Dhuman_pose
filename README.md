@@ -27,6 +27,9 @@ The preprocessing consists of normalisiing the images and the body poses.
 #### Quantitative results
 The number of training data, the number of testing data, and the number of iterations required for each of our three ConvNet models to get the minimum loss value
 ![image](https://user-images.githubusercontent.com/50513215/122835150-c3409500-d2e7-11eb-8a2f-80b51d66eaec.png)
+3D pose estimation comparison results with RGB-based methods on Human3.6m dataset using MPJPE metric
+![image](https://user-images.githubusercontent.com/50513215/122835392-26cac280-d2e8-11eb-8293-5b3841dfb9f2.png)
+
 
 ### Demo
 To run the demo like the following animation, open the folder ./demo with matlab and run main.m 
