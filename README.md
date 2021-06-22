@@ -1,7 +1,7 @@
 ### 3D Human pose estimation from a single depth image
 
 This repository contains code for 3D human pose estimation using a single depth image as a part of the paper 
-[An investigation of 3D human pose estimation for learning Tai Chi: A human factor perspective](https://www.tandfonline.com/doi/abs/10.1080/10447318.2018.1543081) (the pose estimation technique used in the paper)
+[An investigation of 3D human pose estimation for learning Tai Chi: A human factor perspective](https://www.tandfonline.com/doi/abs/10.1080/10447318.2018.1543081) (the pose estimation technique used in the paper). Further evaluation on the Human3.6 dataset is mentioned in the chapter 3 of the [thesis](https://cdmd.cnki.com.cn/Article/CDMD-10248-1020727900.htm)
 ### Rquirements
 Matlab 2016a or above
 [MatConvNet](https://www.vlfeat.org/matconvnet/) toolbox CNN matlab library
