@@ -7,7 +7,8 @@ Matlab 2016a or above
 [MatConvNet](https://www.vlfeat.org/matconvnet/) toolbox CNN matlab library
 ### Overview
 ### Datasets
-
+- [human3.6m dataset](http://vision.imar.ro/human3.6m/description.php)
+- Collected dataset from Kinect v2
 ### Preprocessing
 The preprocessing consists of normalisiing the images and the body poses.
 
