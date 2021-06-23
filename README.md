@@ -12,7 +12,8 @@ From the idea that depth images provide stronger features for 3D pose estimation
 - [human3.6m dataset](http://vision.imar.ro/human3.6m/description.php)
 - Collected dataset from Kinect v2
 ### Preprocessing
-The preprocessing consists of normalisiing the images and the body poses.
+The preprocessing consists of normalising the images and the body poses.
+The kinect pose data were recorded using Brekel Body software, the files are in .bvh format, you can find the preprocessing files to generate images and normalise poses in ./preprocessing folder. The Human3.6 dataset images are first in .cdf and mat format. Use Generatedata files to process the raw data.  
 
 #### Images normalisation
 
@@ -96,6 +97,8 @@ designed and trained using MatConvNet deep learning package
 ![image](https://user-images.githubusercontent.com/50513215/122834392-6abcc800-d2e6-11eb-9479-5847163c431a.png)
 
 ### Training and testing
+To train the model download MatconvNet and copy the content of the folder ./train in MatconvNet/matlab then open the folder  MatconvNet/matlab with matlab and run cnn.m file. The training, testing, and validation data must be in MatconvNet/matlab/data/train, MatconvNet/matlab/data/test and MatconvNet/matlab/data/val respectively. The trained models iterations will be stored in MatconvNet/matlab/data/exp in .mat format.
+
 The designed model is trained and tested with images and 3D poses from Human3.6M
 dataset and a Kinect collected dataset. To our knowledge, most of existing methods used the Human3.6 dataset for pose estimation from RGB images. In order to test the model
 performance, we conducted three training scenarios, two scenarios using the Human3.6
