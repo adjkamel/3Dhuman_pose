@@ -1,7 +1,7 @@
 ### 3D Human pose estimation from a single depth image
 
 This repository contains code for 3D human pose estimation using a single depth image as a part of the paper 
-[An investigation of 3D human pose estimation for learning Tai Chi: A human factor perspective](https://www.tandfonline.com/doi/abs/10.1080/10447318.2018.1543081) (the pose estimation technique used in the paper). Further evaluation on the Human3.6 dataset is mentioned in the chapter 3 of the [thesis](https://cdmd.cnki.com.cn/Article/CDMD-10248-1020727900.htm)
+[An investigation of 3D human pose estimation for learning Tai Chi: A human factor perspective](https://www.tandfonline.com/doi/abs/10.1080/10447318.2018.1543081) (the pose estimation technique used in the paper). Further evaluation on the Human3.6 dataset is mentioned in the chapter 3 of the [thesis](https://cdmd.cnki.com.cn/Article/CDMD-10248-1020727900.htm). Parts of the thesis text and figures are shared in the explanation bellow.
 ### Rquirements
 - Matlab 2016a or above
 - [MatConvNet](https://www.vlfeat.org/matconvnet/) toolbox CNN matlab library
@@ -97,7 +97,7 @@ designed and trained using MatConvNet deep learning package
 ![image](https://user-images.githubusercontent.com/50513215/122834392-6abcc800-d2e6-11eb-9479-5847163c431a.png)
 
 ### Training and testing
-To train the model download MatconvNet and copy the content of the folder ./train in MatconvNet/matlab then open the folder  MatconvNet/matlab with matlab and run cnn.m file. The training, testing, and validation data must be in MatconvNet/matlab/data/train, MatconvNet/matlab/data/test and MatconvNet/matlab/data/val respectively. The trained models iterations will be stored in MatconvNet/matlab/data/exp in .mat format.
+To train the model download [MatConvNet](https://www.vlfeat.org/matconvnet/) and copy the content of the folder ./train in MatconvNet/matlab then open the folder  MatconvNet/matlab with matlab and run cnn.m file. The training, testing, and validation data must be in MatconvNet/matlab/data/train, MatconvNet/matlab/data/test and MatconvNet/matlab/data/val respectively. The trained models iterations will be stored in MatconvNet/matlab/data/exp in .mat format.
 
 The designed model is trained and tested with images and 3D poses from Human3.6M
 dataset and a Kinect collected dataset. To our knowledge, most of existing methods used the Human3.6 dataset for pose estimation from RGB images. In order to test the model
