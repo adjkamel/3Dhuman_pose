@@ -158,6 +158,6 @@ The number of training data, the number of testing data, and the number of itera
 
 
 ### Demo
-To run the demo like the following animation, open the folder ./demo with matlab and run main.m 
+To run the demo like the following animation,  download the [pretrained](https://drive.google.com/file/d/17xbDGAioWQ2kT6zr531_CcG5T-qVM-ln/view?usp=sharing) model and copy it in ./Demo/data/exp then open the folder ./demo with matlab and run main.m 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/50513215/122835059-a1471280-d2e7-11eb-964c-6be706b7cd22.gif)
 
