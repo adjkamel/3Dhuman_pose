@@ -3,15 +3,10 @@
 This repository contains code for 3D human pose estimation using a single depth image as a part of the paper 
 [An investigation of 3D human pose estimation for learning Tai Chi: A human factor perspective](https://www.tandfonline.com/doi/abs/10.1080/10447318.2018.1543081) (the pose estimation technique used in the paper). Further evaluation on the Human3.6 dataset is mentioned in the chapter 3 of the [thesis](https://cdmd.cnki.com.cn/Article/CDMD-10248-1020727900.htm)
 ### Rquirements
-Matlab 2016a or above
-[MatConvNet](https://www.vlfeat.org/matconvnet/) toolbox CNN matlab library
+- Matlab 2016a or above
+- [MatConvNet](https://www.vlfeat.org/matconvnet/) toolbox CNN matlab library
 ### Overview
-From the idea that depth images provide stronger features for 3D pose estimation than RGB images, and from the fact that ConvNet models are a powerful technique for feature extraction and regression, also, from the belief that a well-trained model with the appro- priate parameters with a large amount of normalised data can effectively predict accurate pose locations, we redesign the model to regress directly the input depth image to the joints coordinates in a single learning task from a single depth image without using the detection phase. Our objective is to improve the 3D pose estimation accuracy using a different strategy from the three previously mentioned techniques in term of model training, data preprocessing, loss function, model layers, and data normalisation. We train the model using images and 3D poses from the public Human3.6M dataset, and we also used a private dataset collected by means of Microsoft Kinect v2. Our framework can be summarized in three steps. First, a preprocessing step to remove the background and get only the foreground silhouette body is required to learn the model with only body features. Since the Human3.6M [125] dataset provides segmented body silhouette, we use this step only with our Kinect data to remove the recorded background. Second, data normalisation for both depth images and the 3D poses are conducted to produce a uniform training data. The third step is training the
-model under a well defined parameters decided during the experiments to get the best per-
-formance by checking the loss function behaviour. In the end, we test the trained model
-on new unseen images and we check the pose estimation accuracy. We compared the pose
-estimation results of our method with the ground truth, and with some RGB-based 3D
-pose estimation methods that used the same Human3.6M dataset.
+From the idea that depth images provide stronger features for 3D pose estimation than RGB images, and from the fact that ConvNet models are a powerful technique for feature extraction and regression, also, from the belief that a well-trained model with the appro- priate parameters with a large amount of normalised data can effectively predict accurate pose locations, we redesign the model to regress directly the input depth image to the joints coordinates in a single learning task from a single depth image without using the detection phase. Our objective is to improve the 3D pose estimation accuracy using a different strategy from the three previously mentioned techniques in term of model training, data preprocessing, loss function, model layers, and data normalisation. We train the model using images and 3D poses from the public Human3.6M dataset, and we also used a private dataset collected by means of Microsoft Kinect v2. Our framework can be summarized in three steps. First, a preprocessing step to remove the background and get only the foreground silhouette body is required to learn the model with only body features. Since the Human3.6M [125] dataset provides segmented body silhouette, we use this step only with our Kinect data to remove the recorded background. Second, data normalisation for both depth images and the 3D poses are conducted to produce a uniform training data. The third step is training the model under a well defined parameters decided during the experiments to get the best performance by checking the loss function behaviour. In the end, we test the trained model on new unseen images and we check the pose estimation accuracy. We compared the pose estimation results of our method with the ground truth, and with some RGB-based 3D pose estimation methods that used the same Human3.6M dataset.
 
 ### Datasets
 - [human3.6m dataset](http://vision.imar.ro/human3.6m/description.php)
@@ -100,12 +95,59 @@ designed and trained using MatConvNet deep learning package
 
 ![image](https://user-images.githubusercontent.com/50513215/122834392-6abcc800-d2e6-11eb-9479-5847163c431a.png)
 
+### Training and testing
+The designed model is trained and tested with images and 3D poses from Human3.6M
+dataset and a Kinect collected dataset. To our knowledge, most of existing methods used the Human3.6 dataset for pose estimation from RGB images. In order to test the model
+performance, we conducted three training scenarios, two scenarios using the Human3.6
+dataset and one scenario using the collected Kinect dataset.
+
+- Human3.6M Dataset: The dataset contains 3.6 million images with 3D human poses
+captured with 11 subjects (5 female and 6 male) performed 17 activities from different
+camera views using 15 sensors, including motion cameras, digital video cameras, a time-
+of-flight sensor, and a 3D laser body scanner. Besides 3D poses, the dataset provides RGB
+images, depth images and 3D volumetric models of the subjects. Since in our method we
+need to obtain the depth silhouette of the human body to train the ConvNet model, the
+dataset offers an accurate background substraction. We have trained the model on this
+dataset using two training methods.
+
+First, in order to have a fair comparison with the state-of-the-art methods that examined
+the same dataset, we followed the same testing settings as the previous papers, where the subjects S1,
+S5, S6, S7, S8 are used for training and the subjects S9, S11 are used for testing, for each
+subject we use the images from all the views provided by the dataset. We have chosen the images and poses of six activities (Discussion, Eating, Greeting, SittingDown, Walking,
+WalkingDog) to train the model with each activity separately. In Table 3.1 (Model(a)),
+we present the number of training and testing data for each activity and the number of
+iterations necessary for the model to get its minimum loss function value. In Figure 3.6,
+we show the learning curve of the six activities. We stopped the training process when
+the curve stabilises. The number of iterations necessary depends on the diversity of the
+body poses in each activity. Second, we trained the model with the six activities but with
+one subject (subject S8) performing from only one camera view, and we also used the
+actions from same camera view to test the model performance on less amount of training
+data. In Table 3.1(Model(b)), we show the number of training and testing of subject S8
+and the number of iterations necessary to get the minimum loss value for each activity.
+
+- Microsoft Kinect V2 Dataset: The Kinect dataset was collected with various positions
+during body motion. Most of the movements were performed while the person is standing.
+Background substraction method was necessary to segment the body silhouette as we
+already illustrated in the technical details section.
+In table Table(Model(c)), the
+number of training data, testing data, and the number of iteration necessary for training
+is presented. From the learning curve, we conclude that the model
+can successfully learn the features from the Kinect data as well as Human3.6M data
+because of the effectiveness of the normalisation technique used before the training. 
+
+
 ### Evaluation results
+
 #### Qualitative results
+- Kinect V2
 ![image](https://user-images.githubusercontent.com/50513215/122835640-ae183600-d2e8-11eb-8722-edcfd491a1e7.png)
+- Human3.6 dataset
 ![image](https://user-images.githubusercontent.com/50513215/122835791-ef104a80-d2e8-11eb-838b-25589aced41b.png)
 
 #### Quantitative results
+Evaluation metric
+![image](https://user-images.githubusercontent.com/50513215/123169102-c024e080-d470-11eb-9ed3-cafc61a341cd.png)
+
 The number of training data, the number of testing data, and the number of iterations required for each of our three ConvNet models to get the minimum loss value
 ![image](https://user-images.githubusercontent.com/50513215/122835150-c3409500-d2e7-11eb-8a2f-80b51d66eaec.png)
 3D pose estimation comparison results with RGB-based methods on Human3.6m dataset using MPJPE metric
